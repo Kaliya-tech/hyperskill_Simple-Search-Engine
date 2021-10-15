@@ -1,5 +1,4 @@
 package search;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,10 +27,45 @@ public class Main {
             while (count != numberOfPeople) {
                 allInformation = scanner.nextLine();
                 count++;
-                another.append((allInformation) + "/");
+                another.append((allInformation) + "\n");
             }
         }
-        countQueries(scanner, another);
+        showMenu(scanner, another);
+    }
+
+    public static void showMenu(Scanner scanner, StringBuilder another) {
+
+        System.out.println();
+        System.out.println("=== Menu ===\n" +
+                "1. Find a person\n" +
+                "2. Print all people\n" +
+                "0. Exit");
+
+        int menu = scanner.nextInt();
+
+        switch (menu) {
+            case 1:
+                System.out.println();
+                System.out.println("Enter a name or email to search all suitable people.");
+                findTheData(scanner, another);
+                showMenu(scanner, another);
+                break;
+            case 2:
+                System.out.println();
+                System.out.println("=== List of people ===");
+                System.out.println(another);
+                showMenu(scanner, another);
+                break;
+            case 0:
+                System.out.println();
+                System.out.println("Bye!");
+                return;
+            default:
+                System.out.println();
+                System.out.println("Incorrect option! Try again.");
+                showMenu(scanner, another);
+                break;
+        }
     }
 
     public static void countQueries(Scanner scanner, StringBuilder another) {
@@ -42,22 +76,22 @@ public class Main {
         int countOfQueries = 0;
 
         if (numberOfSearch.equals("1")) {
-            findTheData(another, scanner);
+            findTheData(scanner, another);
         } else {
             while (countOfQueries != numberOfS) {
-                findTheData(another, scanner);
+                findTheData(scanner, another);
                 countOfQueries++;
             }
         }
     }
 
-    public static void findTheData(StringBuilder another, Scanner scanner) {
+    public static void findTheData(Scanner scanner, StringBuilder another) {
 
-        System.out.println("Enter data to search people:");
+        String data0 = scanner.nextLine();
         String data = scanner.nextLine();
 
         String allSuggestions = another.toString();
-        String[] suggestions = allSuggestions.split("/");
+        String[] suggestions = allSuggestions.split("\n");
         List<String> results = new ArrayList<>();
 
         for (int i = 0; i < suggestions.length; i++) {
@@ -67,7 +101,6 @@ public class Main {
         }
 
         if (results.size() > 0) {
-            System.out.println("Found people:");
             for (String output: results) {
                 System.out.println(output);
             }
