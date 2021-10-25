@@ -25,7 +25,7 @@ public class Main {
             allInformation = scanner.nextLine();
         } else {
             while (count != numberOfPeople) {
-                allInformation = scanner.nextLine();
+                allInformation = scanner.nextLine(); 
                 count++;
                 another.append((allInformation) + "\n");
             }
