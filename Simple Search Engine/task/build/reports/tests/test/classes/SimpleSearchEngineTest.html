@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.359s</div>
+<div class="counter">2m42.40s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,101 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="start"></a>
+<h3 class="failures">start</h3>
+<span class="code">
+<pre>java.lang.AssertionError: Error in test #2
+
+Program ran out of input. You tried to read more than expected.
+
+Please find below the output of your program during this failed test.
+Note that the '&gt;' character indicates the beginning of the input line.
+
+---
+
+Arguments: --data names.txt
+
+=== Menu ===
+1. Find a person
+2. Print all people
+0. Exit
+&gt; 1
+
+Enter a name or email to search all szuitable people.
+&gt; burgess
+&gt; 0
+No matching people found.
+
+=== Menu ===
+1. Find a person
+2. Print all people
+0. Exit
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:121)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,26 +166,17 @@
 </tr>
 </thead>
 <tr>
-<td class="success">start</td>
-<td class="success">0.359s</td>
-<td class="success">passed</td>
+<td class="failures">start</td>
+<td class="failures">2m42.40s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>?[1;31m
 Start test 1?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
 
 === Menu ===
 1. Find a person
@@ -106,12 +185,56 @@ Enter all people:
 &gt; 2
 
 === List of people ===
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Katie Jacobs
-Erick Harrington harrington@gmail.com
-Myrtle Medina
-Erick Burgess
+Kristofer Galley
+Fernando Marbury fernando_marbury@gmail.com
+Kristyn Nix nix-kris@gmail.com
+Regenia Enderle
+Malena Gray
+Colette Mattei
+Wendolyn Mcphillips
+Jim Gray
+Coreen Beckham
+Bob Yeh bobyeah@gmail.com
+Shannan Strope stropeshah@gmail.com
+Yer Fillion
+Margene Resendez marres@gmail.com
+Blossom Ambler
+Teri Ledet teri_ledet@gmail.com
+Dana Baron baron@gmail.com
+Abram Goldsberry
+Yer Leopold
+Stefania Trunzo
+Alexis Leopold
+Carlene Pompa
+Oliver Dacruz
+Jonie Richter
+Pasquale Gallien gallien@evilcorp.com
+Verdie Gentle
+Gerardo Strouth gallien@evilcorp.com
+Agripina Dones
+Latricia Niebuhr
+Malena Schommer
+Drema Leopold
+Heide Payeur
+Ranae Digiovanni
+Simona Pereira
+Nick Digiovanni
+Angelita Wigington gallien@evilcorp.com
+Elin Gray
+Dwain Trunzo
+Boris Beiler
+Remi Malek fsociefy@gmail.com
+Demetria Hostetler gallien@evilcorp.com
+Nydia Mcduffie
+Florencio Defibaugh
+Warner Giblin
+May Mans
+Shu Gray
+Kaycee Gray
+Victorina Froehlich victory@gmail.com
+Roseanne Gray
+Erica Radford hisam@gmail.com
+Elyse Pauling
 
 
 === Menu ===
@@ -123,15 +246,6 @@ Erick Burgess
 Bye!
 ?[1;31m
 Start test 2?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
 
 === Menu ===
 1. Find a person
@@ -139,215 +253,15 @@ Enter all people:
 0. Exit
 &gt; 1
 
-Enter a name or email to search all suitable people.
+Enter a name or email to search all szuitable people.
 &gt; burgess
-Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
 &gt; 0
-
-Bye!
-?[1;31m
-Start test 3?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 1
-
-Enter a name or email to search all suitable people.
-&gt; erick
-Erick Harrington harrington@gmail.com
-Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 0
-
-Bye!
-?[1;31m
-Start test 4?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 3
-
-Incorrect option! Try again.
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 1
-
-Enter a name or email to search all suitable people.
-&gt; burgess
-Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 2
-
-=== List of people ===
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Katie Jacobs
-Erick Harrington harrington@gmail.com
-Myrtle Medina
-Erick Burgess
-
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 2
-
-=== List of people ===
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Katie Jacobs
-Erick Harrington harrington@gmail.com
-Myrtle Medina
-Erick Burgess
-
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 1
-
-Enter a name or email to search all suitable people.
-&gt; erick
-Erick Harrington harrington@gmail.com
-Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 0
-
-Bye!
-?[1;31m
-Start test 5?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 2
-
-=== List of people ===
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Katie Jacobs
-Erick Harrington harrington@gmail.com
-Myrtle Medina
-Erick Burgess
-
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 1
-
-Enter a name or email to search all suitable people.
-&gt; @
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Erick Harrington harrington@gmail.com
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 1
-
-Enter a name or email to search all suitable people.
-&gt; this text never find some match
 No matching people found.
 
 === Menu ===
 1. Find a person
 2. Print all people
 0. Exit
-&gt; 2
-
-=== List of people ===
-Dwight Joseph djo@gmail.com
-Rene Webb webb@gmail.com
-Katie Jacobs
-Erick Harrington harrington@gmail.com
-Myrtle Medina
-Erick Burgess
-
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 0
-
-Bye!
-?[1;31m
-Start test 6?[0m
-Enter the number of people:
-&gt; 6
-Enter all people:
-&gt; Dwight Joseph djo@gmail.com
-&gt; Rene Webb webb@gmail.com
-&gt; Katie Jacobs
-&gt; Erick Harrington harrington@gmail.com
-&gt; Myrtle Medina
-&gt; Erick Burgess
-
-=== Menu ===
-1. Find a person
-2. Print all people
-0. Exit
-&gt; 0
-
-Bye!
 </pre>
 </span>
 </div>
@@ -359,7 +273,7 @@ Bye!
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1.1</a> at Oct 15, 2021, 11:21:21 PM</p>
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at Oct 29, 2021, 11:40:22 PM</p>
 </div>
 </div>
 </body>

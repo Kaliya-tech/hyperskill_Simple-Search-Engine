@@ -1,39 +1,32 @@
 package search;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.FileSystemException;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        startSearch(scanner);
-    }
+    public static void main(String[] args) throws IOException {
 
-    public static void startSearch(Scanner scanner) {
-        System.out.println("Enter the number of people:");
-        String number = scanner.nextLine();
-        int numberOfPeople = Integer.parseInt(number);
+        String pathToFile = args[1];
+        File file = new File(pathToFile);
 
-        System.out.println("Enter all people:");
-
-        String allInformation = "";
         String inf = "";
-        StringBuilder another = new StringBuilder(inf);
+        StringBuilder information = new StringBuilder(inf);
 
-        int count = 0;
-        if (number.equals("1")) {
-            allInformation = scanner.nextLine();
-        } else {
-            while (count != numberOfPeople) {
-                allInformation = scanner.nextLine(); 
-                count++;
-                another.append((allInformation) + "\n");
-            }
+        Scanner scanner = new Scanner(System.in);
+
+        try (Scanner sc = new Scanner(file)){
+
+            startSearch(scanner, sc, information, inf);
+        } catch (FileSystemException exception) {
+                System.out.println(exception.getMessage());
+        } finally {
+                file.delete();
         }
-        showMenu(scanner, another);
     }
 
-    public static void showMenu(Scanner scanner, StringBuilder another) {
+    public static void startSearch(Scanner scanner, Scanner sc,
+                                   StringBuilder information, String inf) throws IOException {
 
         System.out.println();
         System.out.println("=== Menu ===\n" +
@@ -41,65 +34,69 @@ public class Main {
                 "2. Print all people\n" +
                 "0. Exit");
 
-        int menu = scanner.nextInt();
+        String str = scanner.nextLine();
+        int menu = Integer.parseInt(str);
 
-        switch (menu) {
-            case 1:
-                System.out.println();
-                System.out.println("Enter a name or email to search all suitable people.");
-                findTheData(scanner, another);
-                showMenu(scanner, another);
-                break;
-            case 2:
-                System.out.println();
-                System.out.println("=== List of people ===");
-                System.out.println(another);
-                showMenu(scanner, another);
-                break;
-            case 0:
-                System.out.println();
-                System.out.println("Bye!");
-                return;
-            default:
-                System.out.println();
-                System.out.println("Incorrect option! Try again.");
-                showMenu(scanner, another);
-                break;
-        }
-    }
+            switch (menu) {
+                case 1:
+                    System.out.println();
+                    System.out.println("Enter a name or email to search all "
+                            + "szuitable people.");
+                    findTheData(scanner, sc, information);
+                    startSearch(scanner, sc, information, inf);
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.println("=== List of people ===");
 
-    public static void countQueries(Scanner scanner, StringBuilder another) {
+                    while (sc.hasNext()) {
+                        inf = sc.nextLine();
+                        information.append(inf).append("\n");
+                    }
+                    System.out.println(information);
+                    startSearch(scanner, sc, information, inf);
+                    break;
+                case 0:
+                    System.out.println();
+                    System.out.println("Bye!");
+                    return;
 
-        System.out.println("Enter the number of search queries:");
-        String numberOfSearch = scanner.nextLine();
-        int numberOfS = Integer.parseInt(numberOfSearch);
-        int countOfQueries = 0;
-
-        if (numberOfSearch.equals("1")) {
-            findTheData(scanner, another);
-        } else {
-            while (countOfQueries != numberOfS) {
-                findTheData(scanner, another);
-                countOfQueries++;
+                default:
+                    System.out.println();
+                    System.out.println("Incorrect option! Try again.");
+                    startSearch(scanner, sc, information, inf);
+                    break;
             }
-        }
     }
 
-    public static void findTheData(Scanner scanner, StringBuilder another) {
+    public static void saveTheData(Scanner sc, StringBuilder information, String inf) {
 
-        String data0 = scanner.nextLine();
+        while (sc.hasNext()) {
+            inf = sc.nextLine();
+            information.append(inf);
+        }
+        sc.close();
+        System.out.println(information);
+    }
+
+    public static void findTheData(Scanner scanner, Scanner sc, StringBuilder information)
+            throws IOException {
+
         String data = scanner.nextLine();
+        String changedData = data.trim();
 
-        String allSuggestions = another.toString();
+        String allSuggestions = information.toString();
         String[] suggestions = allSuggestions.split("\n");
+
         List<String> results = new ArrayList<>();
 
         for (int i = 0; i < suggestions.length; i++) {
-            if (suggestions[i].toLowerCase().contains(data.toLowerCase())) {
+            if (suggestions[i].toLowerCase().contains(changedData.toLowerCase())) {
                 results.add(suggestions[i]);
             }
         }
 
+        // check List size
         if (results.size() > 0) {
             for (String output: results) {
                 System.out.println(output);
