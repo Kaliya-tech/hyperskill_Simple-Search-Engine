@@ -12,3 +12,6 @@ content:
 - ArrayList
 - The Collections Framework overview
 - The List interface
+- The Set interface
+- Iterating over arrays
+- The Map interface

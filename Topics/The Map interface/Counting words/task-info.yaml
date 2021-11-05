@@ -1,0 +1,54 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.*;
+
+    class MapUtils {
+
+        public static SortedMap<String, Integer> wordCount(String[] strings) {
+            // write your code here
+        }
+
+        public static void printMap(Map<String, Integer> map) {
+            // write your code here
+        }
+
+    }
+
+    /* Do not change code below */
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String[] words = scanner.nextLine().split(" ");
+            MapUtils.printMap(MapUtils.wordCount(words));
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2348#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 3. your result:
+    4 C
+    correct result:
+    a : 2
+    b : 3
+    c : 1
+    d : 1
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    a b b c d a b
+    Correct output:
+    a : 2
+    b : 3
+    c : 1
+    d : 1
+
+    Your code output:
+    4 C
+  time: Fri, 05 Nov 2021 21:31:34 UTC
+record: -1
