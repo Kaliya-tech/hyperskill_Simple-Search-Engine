@@ -5,22 +5,24 @@ class MapUtils {
     public static SortedMap<String, Integer> wordCount(String[] strings) {
         Map<String, Integer> map = new TreeMap<>();
 
+
         for (String keys :strings) {
-            map.put(keys, 0);
+
+            if (map.containsKey(keys)) {
+                map.put(keys, map.get(keys) + 1);
+            } else {
+                map.put(keys, 1);
+            }
         }
         return (SortedMap<String, Integer>) map;
     }
 
     public static void printMap(Map<String, Integer> map) {
-        int count = 0;
-        for (String key: map.keySet()) {
-            if (map.containsKey(key)) {
-                count++;
-            }
-        }
-        System.out.println(count + " C");
-    }
 
+        for (String out : map.keySet()) {
+            System.out.println(out + " : " + map.get(out));
+        }
+    }
 }
 
 /* Do not change code below */

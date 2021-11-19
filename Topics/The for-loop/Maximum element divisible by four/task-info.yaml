@@ -1,0 +1,43 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.Scanner;
+
+    class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            // start coding here
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2189#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 10. Cannot check answer. Perhaps output format is wrong.
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    11
+    51
+    16
+    36
+    42
+    24
+    78
+    53
+    87
+    53
+    12
+    82
+
+    Correct output:
+    36
+
+    Your code output:
+    [16, 36, 24, 12]
+  time: Fri, 19 Nov 2021 11:15:26 UTC
+record: -1

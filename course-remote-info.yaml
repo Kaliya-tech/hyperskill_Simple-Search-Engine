@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/210158/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Fri, 05 Nov 2021 20:05:56 UTC
+update_date: Fri, 19 Nov 2021 09:31:08 UTC
 stages:
 - id: 354
   step: 5496
@@ -19,7 +19,7 @@ stages:
   is_completed: true
 - id: 358
   step: 5500
-  is_completed: false
+  is_completed: true
 - id: 359
   step: 5501
   is_completed: false
@@ -30,7 +30,7 @@ topics:
   - title: Computer algorithms
     theory_id: 16547
   - title: The big O notation
-    theory_id: 13991
+    theory_id: 16699
   - title: Introduction to Java
     theory_id: 3500
   - title: Basic literals
@@ -174,10 +174,6 @@ topics:
     theory_id: 3622
   - title: Static members
     theory_id: 3534
-  - title: Interface
-    theory_id: 3615
-  - title: Comparable
-    theory_id: 14456
   - title: The keyword super
     theory_id: 3588
   - title: Protected modifier
@@ -219,6 +215,8 @@ topics:
     theory_id: 3575
   - title: The Map interface
     theory_id: 3558
+  - title: Interface
+    theory_id: 3615
   - title: The Object class
     theory_id: 3596
   5:

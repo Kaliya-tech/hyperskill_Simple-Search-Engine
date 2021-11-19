@@ -65,6 +65,10 @@ public class Main {
         return information;
     }
 
+//    public static Map<Integer, String> addDataToMap() {
+//
+//    }
+
     public static void findTheData(Scanner scanner,StringBuilder information) {
 
         scanner.nextLine(); // zero element
@@ -76,18 +80,23 @@ public class Main {
         List<String> results = new ArrayList<>();
 
         for (String value: data) {
-            if (value.toLowerCase().contains(query.strip().toLowerCase())) {
+            String[] searchQuery = query.split("");
+            if (searchQuery.length == 1) {
+                System.out.println("No matching people found.");
+                break;
+            } else if (value.toLowerCase().contains(query.strip().toLowerCase())) {
                 results.add(value);
             }
         }
 
         // check List size
-        if (results.size() > 0) {
+        if (results.size() == 0) {
+            System.out.println("No matching people found.");
+        } else {
+            System.out.println(results.size() + " persons found:");
             for (String found: results) {
                 System.out.println(found);
             }
-        } else {
-            System.out.println("No matching people found.");
         }
     }
 }
