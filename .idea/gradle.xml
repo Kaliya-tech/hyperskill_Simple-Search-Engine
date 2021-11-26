@@ -12,12 +12,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Simple Search Engine/task" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/IntBinaryOperation" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Users and WebSites" />
             <option value="$PROJECT_DIR$/Topics/Algorithms in Java/Find a value's index" />
             <option value="$PROJECT_DIR$/Topics/Algorithms in Java/Theory" />
             <option value="$PROJECT_DIR$/Topics/ArrayList/Concat positive numbers" />
             <option value="$PROJECT_DIR$/Topics/ArrayList/Creating list" />
             <option value="$PROJECT_DIR$/Topics/ArrayList/Output the list's elements" />
             <option value="$PROJECT_DIR$/Topics/ArrayList/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Area of a circle" />
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Celsius to Fahrenheit" />
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Difference between two doubles" />
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Distance" />
@@ -73,6 +77,11 @@
             <option value="$PROJECT_DIR$/Topics/Relational operators/Groundhogs at a party" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Is between" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Strategy/Max and Min" />
+            <option value="$PROJECT_DIR$/Topics/Strategy/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Template method/Template Method" />
+            <option value="$PROJECT_DIR$/Topics/Template method/Template Method (1)" />
+            <option value="$PROJECT_DIR$/Topics/Template method/Theory" />
             <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Blacklist" />
             <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Squares list" />
             <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Theory" />

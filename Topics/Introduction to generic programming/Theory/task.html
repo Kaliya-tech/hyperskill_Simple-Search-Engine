@@ -99,10 +99,10 @@ System.out.println(obj2.set("def")); // prints the string "def"</code></pre>
   <p>As a more complicated example, let us consider the following class which represents a generic immutable array. It has one field to store items of type <code class="language-java">T</code>, a constructor to set items, a method to get an item by its index, and another method to get the length of the internal array. The class is immutable because it does not provide methods to modify the items array.</p> 
   <pre><code class="language-java">public class ImmutableArray&lt;T&gt; {
 
-    private T[] items;
+    private final T[] items;
 
     public ImmutableArray(T[] items) {
-        this.items = items;
+        this.items = items.clone();
     }
 
     public T get(int index) {
